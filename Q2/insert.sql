@@ -1,0 +1,10 @@
+INSERT INTO Employee Values(101,'Jeet','IT',50000,DATE '2022-01-15');
+INSERT INTO Employee Values(102,'Daksh','HR',60000,DATE '2021-03-10');
+INSERT INTO Employee Values(103,'Richa','Finance',55000,DATE '2020-07-20');
+INSERT INTO Employee Values(104,'Himesh','IT',70000,DATE '2019-11-05');
+INSERT INTO Employee Values(105,'Vishva','HR',65000,DATE '2021-05-25');
+INSERT INTO Employee Values(106,'Manan','Finance',60000,DATE '2020-09-15');
+INSERT INTO Employee Values(107,'Devansh','IT',75000,DATE '2018-12-30');
+INSERT INTO Employee Values(108,'Harry','HR',58000,DATE '2021-02-18');
+INSERT INTO Employee Values(109,'Nehal','Finance',62000,DATE '2020-06-12');
+INSERT INTO Employee Values(110,'Harsh','IT',80000,DATE '2019-08-22');
