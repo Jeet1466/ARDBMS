@@ -7,21 +7,37 @@ IS
     v_PatientID int;
     v_DoctorID int;
     v_AvailableSlots int;
+    Patient_Dont_Exists EXCEPTION;
+    Doctor_Dont_Exists EXCEPTION;
+    No_Slots_Available EXCEPTION;
 BEGIN
-    SELECT PatientID INTO v_PatientID FROM Patient WHERE PatientID = p_PatientID;
-    SELECT DoctorID, AvailableSlots INTO v_DoctorID, v_AvailableSlots FROM Doctor WHERE DoctorID = p_DoctorID;
+    SELECT COUNT(*) INTO v_PatientID FROM Patient WHERE PatientID = p_PatientID;
+    SELECT COUNT(*) INTO v_DoctorID FROM Doctor WHERE DoctorID = p_DoctorID;
 
-    IF v_PatientID IS NULL THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Patient does not exist.');
-    ELSIF v_DoctorID IS NULL THEN
-        RAISE_APPLICATION_ERROR(-20002, 'Doctor does not exist.');
-    ELSIF v_AvailableSlots <= 0 THEN
-        RAISE_APPLICATION_ERROR(-20003, 'No available slots for the doctor.');
+    IF v_PatientID = 0 THEN
+        RAISE Patient_Dont_Exists;
+    ELSIF v_DoctorID = 0 THEN
+        RAISE Doctor_Dont_Exists;
     ELSE
-        INSERT INTO Appointment (AppointmentID, PatientID, DoctorID, AppointmentDate)
-        VALUES (Appointment_seq.NEXTVAL, p_PatientID, p_DoctorID, SYSDATE);
+        SELECT AvailableSlots INTO v_AvailableSlots FROM Doctor WHERE DoctorID = p_DoctorID;
+        IF v_AvailableSlots <= 0 THEN
+            RAISE No_Slots_Available;
+        ELSE
+            INSERT INTO Appointment (AppointmentID, PatientID, DoctorID, AppointmentDate)
+            VALUES (Appointment_seq.NEXTVAL, p_PatientID, p_DoctorID, SYSDATE);
 
-        UPDATE Doctor SET AvailableSlots = AvailableSlots - 1 WHERE DoctorID = p_DoctorID;
-    END IF; 
+            UPDATE Doctor SET AvailableSlots = AvailableSlots - 1 WHERE DoctorID = p_DoctorID;
+            DBMS_OUTPUT.PUT_LINE('Appointment scheduled successfully.');
+        END IF;
+    END IF;
+EXCEPTION
+    WHEN Patient_Dont_Exists THEN
+        DBMS_OUTPUT.PUT_LINE('Patient does not exist.');
+    WHEN Doctor_Dont_Exists THEN
+        DBMS_OUTPUT.PUT_LINE('Doctor does not exist.');
+    WHEN No_Slots_Available THEN
+        DBMS_OUTPUT.PUT_LINE('No available slots for the doctor.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM); 
 END;
 /

@@ -5,8 +5,7 @@ CREATE OR REPLACE PROCEDURE REGISTER_STUDENT(
     p_SubjectID IN Int
 )
 IS
-    v_studentID 
-    int;
+    v_studentID int;
     v_subjectID int;
     V_COUNT int;
     v_seats int;
