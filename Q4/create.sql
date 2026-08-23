@@ -12,26 +12,18 @@ CREATE TABLE PRODUCT(
 );
 CREATE TABLE ORDERS(
     OrderID Int Primary Key,
-    CustomerID Int,
-    ProductID Int,
+    CustomerID Int References CUSTOMER(CustomerID),
+    ProductID Int References PRODUCT(ProductID),
     Quantity Int,
-    OrderDate Date,
-    Constraint fk_order_Customer
-        Foreign Key (CustomerId)
-        References CUSTOMER(CustomerId),
-    Constraint fk_order_Product
-        Foreign Key (ProductID)
-        References PRODUCT(ProductID)
+    OrderDate Date
+   
 );
 CREATE TABLE PAYMENT(
     PaymentID Int Primary Key,
-    OrderID Int,
+    OrderID Int References ORDERS(OrderID),
     Amount Int,
     PaymentStatus Varchar(20),
-    Status Varchar(20),
-    Constraint fk_payment_Order
-        Foreign Key (OrderID)
-        References ORDERS(OrderID)
+    Status Varchar(20)
 );
 CREATE SEQUENCE Order_seq
 START WITH 1

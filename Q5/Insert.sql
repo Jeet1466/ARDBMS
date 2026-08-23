@@ -1,0 +1,10 @@
+Insert Into Marks values (1, 101, 'ARDBMS', 95);
+Insert Into Marks values (2, 102, 'ARDBMS', 90);
+Insert Into Marks values (3, 103, 'ARDBMS', 75);
+Insert Into Marks values (4, 104, 'ARDBMS', 80);
+Insert Into Marks values (5, 105, 'ARDBMS', 88);
+Insert Into Marks values (6, 106, 'ARDBMS', 92);
+Insert Into Marks values (7, 107, 'ARDBMS', 85);
+Insert Into Marks values (8, 108, 'ARDBMS', 78);
+Insert Into Marks values (9, 109, 'ARDBMS', 82);
+Insert Into Marks values (10, 110, 'ARDBMS', 89);

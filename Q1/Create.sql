@@ -14,25 +14,15 @@ CREATE TABLE Subject(
 
 Create table Registration(
     RegID Int Primary Key,
-    StudentID Int,
-    SubjectID Int,
-    RegDate Date,
-    Constraint fk_reg_Stud
-        Foreign Key (StudentId)
-        References Student(StudentId),
-    Constraint fk_reg_Sub
-        Foreign Key (SubjectID)
-        References Subject(SubjectID)
-);
+    StudentID Int References Student(StudentID),
+    SubjectID Int References Subject(SubjectID),
+    RegDate Date
 
 Create table Fee(
     FeeID Int Primary Key,
-    StudentID Int,
+    StudentID Int References Student(StudentID),
     Amount Int,
-    PaidStatus Varchar(20),
-    Constraint fk_fee_Stud
-        Foreign Key (StudentId)
-        References Student(StudentId)
+    PaidStatus Varchar(20)
 );
     
 CREATE TABLE Student_Audit(

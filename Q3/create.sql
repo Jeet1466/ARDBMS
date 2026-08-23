@@ -12,15 +12,10 @@ CREATE TABLE DOCTOR(
 );
 CREATE TABLE APPOINTMENT(
     AppointmentID Int Primary Key,
-    PatientID Int,
-    DoctorID Int,
-    AppointmentDate Date,
-    Constraint fk_appointment_Patient
-        Foreign Key (PatientId)
-        References Patient(PatientId),
-    Constraint fk_appointment_Doctor
-        Foreign Key (DoctorID)
-        References Doctor(DoctorID)
+    PatientID Int References PATIENT(PatientID),
+    DoctorID Int References DOCTOR(DoctorID),
+    AppointmentDate Date
+   
 );
 CREATE SEQUENCE Appointment_seq
 START WITH 1
