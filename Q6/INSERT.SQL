@@ -1,0 +1,10 @@
+Insert Into AccounT values (1001,'Jeet','Savings',500000);
+Insert Into AccounT values (1002,'Daksh','Current',300000);
+Insert Into AccounT values (1003,'Richa','Savings',200000);
+Insert Into AccounT values (1004,'Himesh','Current',400000);
+Insert Into AccounT values (1005,'Vishva','Savings',450000);
+Insert Into AccounT values (1006,'Manan','Current',350000);
+Insert Into AccounT values (1007,'Devansh','Savings',450000);
+Insert Into AccounT values (1008,'Harry','Current',250000);
+Insert Into AccounT values (1009,'Nehal','Savings',350000);
+Insert Into AccounT values (1010,'Harsh','Current',150000);

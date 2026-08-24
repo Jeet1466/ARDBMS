@@ -7,13 +7,10 @@ CREATE TABLE Employee(
 ); 
 CREATE TABLE Salary_payment(
     PaymentID Int Primary Key,
-    EmpID Int,
+    EmpID Int References Employee(EmpID),
     PaymentDate Date,
     Amount Int,
-    Status Varchar(20),
-    Constraint fk_payment_Emp
-        Foreign Key (EmpID)
-        References Employee(EmpID)
+    Status Varchar(20)
 );
 CREATE TABLE Emp_Audit(
     AuditID Int Primary KEY,
