@@ -1,0 +1,36 @@
+Insert into MEMBER Values(101,'Jeet','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(102,'Daksh','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(103,'Richa','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(104,'Himesh','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(105,'Vishva','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(106,'Manan','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(107,'Devansh','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(108,'Harry','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(109,'Nehal','Jeetpatel1466@gmail.com','84691396550');
+Insert into MEMBER Values(110,'Harsh','Jeetpatel1466@gmail.com','84691396550');
+
+INSERT INTO BOOK VALUES(201,'C Programming','Dennis Ritchie','Programming');
+INSERT INTO BOOK VALUES(202,'Java Programming','James Gosling','Programming');
+INSERT INTO BOOK VALUES(203,'Python Programming','Guido van Rossum','Programming');
+INSERT INTO BOOK VALUES(204,'Data Structures and Algorithms','Robert Lafore','Computer Science');
+INSERT INTO BOOK VALUES(205,'Operating System Concepts','Abraham Silberschatz','Computer Science');
+INSERT INTO BOOK VALUES(206,'Database System Concepts','Abraham Silberschatz','Database');
+INSERT INTO BOOK VALUES(207,'Computer Networks','Andrew S. Tanenbaum','Networking');
+INSERT INTO BOOK VALUES(208,'Software Engineering','Ian Sommerville','Software Engineering');
+INSERT INTO BOOK VALUES(209,'Artificial Intelligence: A Modern Approach','Stuart Russell','Artificial Intelligence');
+INSERT INTO BOOK VALUES(210,'Introduction to Algorithms','Thomas H. Cormen','Algorithms');
+
+INSERT INTO ISSUE VALUES(1,101,209,DATE '2024-01-10',DATE '2024-02-10');
+INSERT INTO ISSUE VALUES(2,102,205,DATE '2024-01-15',DATE '2024-02-15');
+INSERT INTO ISSUE VALUES(3,103,201,DATE '2024-01-20',DATE '2024-02-20');
+INSERT INTO ISSUE VALUES(4,104,202,DATE '2024-01-25',DATE '2024-02-25');
+INSERT INTO ISSUE VALUES(5,105,203,DATE '2024-01-30',DATE '2024-02-30');
+INSERT INTO ISSUE VALUES(6,106,204,DATE '2024-02-05',DATE '2024-03-05');
+INSERT INTO ISSUE VALUES(7,101,206,DATE '2024-02-10',DATE '2024-03-10');
+INSERT INTO ISSUE VALUES(8,108,207,DATE '2024-02-15',DATE '2024-03-15');
+INSERT INTO ISSUE VALUES(9,109,208,DATE '2024-02-20',DATE '2024-03-20');
+INSERT INTO ISSUE VALUES(10,110,210,DATE '2024-02-25',DATE '2024-03-25');
+INSERT INTO ISSUE VALUES(11,101,205,DATE '2024-03-01',DATE '2024-04-01');
+INSERT INTO ISSUE VALUES(12,102,203,DATE '2024-03-05',DATE '2024-04-05');
+INSERT INTO ISSUE VALUES(13,101,202,DATE '2024-03-10',DATE '2024-04-10');
+INSERT INTO ISSUE VALUES(14,101,207,DATE '2024-03-10', NULL);
